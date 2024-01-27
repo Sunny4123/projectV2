@@ -1,0 +1,73 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(backlog1.jpg);
+    background-size: 100%;
+    padding: 20px;
+}
+.main-farmer-detail {
+    position: relative;
+    max-height: 740px;
+    max-width: 700px;
+    width: 100%;
+    background: #ebe6e6ee;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba( 0, 0, 0, 0.1);
+}
+.main-farmer-detail header {
+    padding-top: 35px;
+    width: 40.5rem;
+    height: 7rem;
+    font-size: 1.5rem;
+    color: #fffdfd;
+    font-weight: 500;
+    text-align: center;
+    background: url('back5.jpg')no-repeat;
+}
+.main .main-img {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 30px;
+}
+.main-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+}
+.main h2 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.main .btn a{
+    display: flex;
+    background: rgba(238, 167, 1, 0.919);
+    border: 3px solid rgba(0, 0, 0, 0.837);
+    border-radius: 10px;
+    width: 10rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    font-size: 18px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+    margin-left: 15.2rem;
+    margin-top: 50px;
+}
+.main .btn a:hover {
+    transform: scale(1.1);
+}

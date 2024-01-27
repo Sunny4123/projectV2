@@ -1,0 +1,69 @@
+<?php 
+    include_once "sever.php";
+    session_start();
+    $name = "";
+    if(isset($_SESSION['name'])){
+        $name = $_SESSION['name'];
+    }
+    $location = "./uploads/";
+    $f = "SELECT * From user WHERE username = '$name'";
+    $fresult = mysqli_query($connect,$f);
+    $rowf = mysqli_fetch_array($fresult);
+    $c = "SELECT * FROM usercumtomers WHERE username = '$name'";
+    $cresult = mysqli_query($connect,$c);
+    $rowc = mysqli_fetch_array($cresult);
+    if($rowf){
+        $email = $rowf['email'];
+    }
+    if($rowc){
+        $email = $rowc['email'];
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projectX</title>
+    <link rel="stylesheet" href="product_alert.css">
+</head>
+<body>
+    <header class="header">
+        <a href="homepage.html" class="logo"><img src="logo AC.png"></a>
+        <nav class="navbar">
+            <a href="homepage_1.php">หน้าแรก</a>
+            <a href="myshop.php" class="active">ร้านค้าของฉัน</a>
+            <a href="market.php">ตลาด</a>
+                <a>ออกจากระบบ</a>
+        </nav>
+    </header>
+    <section class="main-alert">
+        <div class="head-show">
+            <h1>คำสั่งซื้อของฉัน</h1>
+        </div>
+        <div class="item" style="float:left">
+            <?php 
+                $sql = "SELECT * FROM myorder WHERE username = '$name'";
+                $result = mysqli_query($connect,$sql);
+                while($row = mysqli_fetch_assoc($result)){
+            ?>
+                <div class="alert-show" style="float:left">
+                <img src="<?php echo $location.$row['img'];?>">
+                <h2><?php echo $row['proname']; ?></h2>
+                <h2>จำนวน: <label><?php echo $row['num']; ?></label> กก</h2>
+                <h2>ราคา: <label><?php echo $row['price']; ?></label> บาท</h2>
+                <div class="detail-btn">
+                    <a href="con_order.php?id=<?php  echo $row['id'];?>">ยืนยันสินค้า</a>
+                </div>
+            </div>
+            <?php 
+                }
+            ?>
+        </div>
+       
+    </section>
+    <footer>
+        <p> &copy;Agricultural Community. Rights Reserved. Designed by<span> Van Boom Sun Pond</span></p>
+    </footer>
+</body>
+</html>

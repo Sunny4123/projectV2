@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="addproduct.php" method="post" enctype="multipart/form-data">
+        <label>name</label>
+        <input type="text" name="name" required>
+        <label>price</label>
+        <input type="text" name="price" required>
+        <label>จำนวน</label>
+        <input type="text" name="num" required>
+        <label>img</label>
+        <input type="file" name="file" accept="image/gif, image/jpeg, image/png" required>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
