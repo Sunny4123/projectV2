@@ -34,7 +34,13 @@ if(!empty($_FILES["file"]["name"])){
         echo "error file"; 
     }
 }else{
-    echo "error check";
+    $sql = "UPDATE myshop2 SET productname = '$name',price = '$price',num = '$number' WHERE id = '$id'";
+    $result = mysqli_query($connect,$sql);
+    if($result){
+        header("location: myshop.php");
+    }else{
+        echo "error";
+    }
 }
 
 

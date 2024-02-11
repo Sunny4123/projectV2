@@ -29,11 +29,11 @@
             </div>
             <div class="input-box">
                 <label>จำนวณสินค้า</label>
-                <input type="text" value = "<?php echo $row['num']; ?>" name="price" placeholder="0.00/กก"required />
+                <input type="text" value = "<?php echo $row['num']; ?>" name="num" placeholder="0.00/กก"required />
             </div>
             <div class="input-box">
                 <label>ราคาสินค้า/บาท</label>
-                <input type="text" value = "<?php echo $row['price']; ?>" name="num" placeholder="0/บาท"required />
+                <input type="text" value = "<?php echo $row['price']; ?>" name="price" placeholder="0/บาท"required />
             </div>
                 <button>เพิ่มสินค้า</button>
         </form>

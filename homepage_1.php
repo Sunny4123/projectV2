@@ -43,7 +43,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projextX</title>
     <link rel="stylesheet" href="homepage_8v.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="logoic.jpg">
@@ -65,6 +64,7 @@
 </header>
 <body>   
 </body>
+    <script src = "sc.js"></script>
     <section class="home" id="home">
         <div class="rain">
             <span style="--i:10"></span>

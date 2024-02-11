@@ -45,7 +45,7 @@
                 <a href="homepage_1.php?id=1">ออกจากระบบ</a>
             </nav>
         </header>
-        <section class="main-alert">
+        <section class="main-alert"  style="border: 3px solid green;">
             <?php 
                 if($rownum == 0){
                     echo "No order";
@@ -54,7 +54,7 @@
             <div class="head-show">
                 <h1>คำสั่งซื้อของฉัน</h1>
             </div>
-            <div class = "item">
+            <div class = "item"  style="border: 3px solid red;" >
             <?php while($row = mysqli_fetch_assoc($result)){ ?>
                 <?php if($row['status'] == "order"){
                     $st = "opacity:50%;pointer-events:none;";
