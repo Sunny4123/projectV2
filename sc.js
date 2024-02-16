@@ -1,6 +1,6 @@
 let t = document.title
 window.addEventListener("blur", () => {
-    document.title = "Goodbye";
+    document.title = "Fuck come back";
 })
 window.addEventListener("focus", () =>{
     document.title = "Welcome";
