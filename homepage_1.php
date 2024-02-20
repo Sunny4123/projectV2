@@ -7,8 +7,8 @@
         session_destroy();
         unset($_SESSION['name']);
         header('location: ask.php');
-        setcookie('username',"",time()-(86400*30));
-        setcookie('pass',"",time()-(86400*30));
+        setcookie('username',"",time()-(86400 * 30));
+        setcookie('pass',"",time()-(86400 * 30));
     }/**if($name == "everone"){
         header('location: ask.php');
     }**/

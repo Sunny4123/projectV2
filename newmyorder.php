@@ -21,21 +21,20 @@
     }
     $sql = "SELECT * FROM myorder WHERE username = '$name'";
     $result = mysqli_query($connect,$sql);
-    /*$rownum = mysqli_num_rows($result);
-    if($rownum == 0){
-        echo "No order";
-    }else{*/
+    $rownum = mysqli_num_rows($result);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projectX</title>
-    <link rel="stylesheet" href="Myorder.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="newmyorder.css">   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/2ec2ff8d8c.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="header">
         <a href="homepage.html" class="logo"><img src="logo AC.png"></a>
@@ -43,47 +42,40 @@
             <a href="homepage_1.php">หน้าแรก</a>
             <a href="myshop.php">ร้านค้าของฉัน</a>
             <a href="market.php">ตลาด</a>
-            <a href="My_order.php" class="active"><i class="fa-solid fa-truck-fast"></i></a>
-                <a href="homepage_1.php?id=1">ออกจากระบบ</a>
+            <a href="newmyorder.php" class="active"><i class="fa-solid fa-truck-fast"></i></a>
+            <a href="homepage_1.php?id=1">ออกจากระบบ</a>
         </nav>
     </header>
-    <section class="main-alert">
-        <div class="head-show">
+    <section class="main">
+        <div class="title-aleart">
             <h1>คำสั่งซื้อของฉัน</h1>
-        </div>
+        </div>            
+        <div class="con">
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
-            <?php if($row['status'] == "order"){
-                $st = "opacity:50%;pointer-events:none;";
-                $c_bottom = "";
-            }else {
-                $st = "";
-                $c_bottom = "opacity:50%;pointer-events:none;";
-            }
-            ?>
-        <div class = "item">
-            <div class="alert-show">
-                <img src="<?php echo $location.$row['img'];?>">
-                <h2><?php echo $row['proname']; ?></h2>
-                <h2>จำนวน: <label><?php echo $row['num']; ?></label> กก</h2>
-                <h2>ราคา: <label><?php echo $row['price']; ?></label> บาท</h2>
-                <div class="detail-btn">
-                    <a href="con_order.php?id=<?php echo $row['id'];?>" style="<?php echo $st ?>">ยืนยันคำสั่งซื้อ</a>
-                </div>
-                <div class="detail-btn2">
-                    <a href="update_order_type.php?typeorder=can&id=<?php echo $row['id'];?>" style="<?php echo $c_bottom ?>">ยกเลิก</a>
-                </div>
-                
-            </div>
-        </div>
-        <?php
+                <?php if($row['status'] == "order"){
+                    $st = "opacity:50%;pointer-events:none;";
+                    $c_bottom = "";
+                }else {
+                    $st = "";
+                    $c_bottom = "opacity:50%;pointer-events:none;";
                 }
-        ?>
-        
-          
-       
+                ?>
+            <div class="item">
+                <div class="sub-item">
+                    <img src="<?php echo $location.$row['img'];?>" alt="-">
+                    <h2><?php echo $row['proname']; ?></h2>
+                    <h2>จำนวน: <label><?php echo $row['num']; ?></label> กก</h2>
+                    <h2>ราคา: <label><?php echo $row['price']; ?></label> บาท</h2>
+                    <div class="detail-btn">
+                    <a href="con_order.php?id=<?php echo $row['id'];?>" style="<?php echo $st ?>">ยืนยันคำสั่งซื้อ</a>
+                    </div>
+                    <div class="detail-btn2">
+                    <a href="update_order_type.php?typeorder=can&id=<?php echo $row['id'];?>" style="<?php echo $c_bottom ?>">ยกเลิก</a>
+                    </div>
+                </div>          
+            </div>
+            <?php } ?>
+        </div>  
     </section>
-    <footer>
-        <p> &copy;Agricultural Community. Rights Reserved. Designed by<span> Van Boom Sun Pond</span></p>
-    </footer>
 </body>
 </html>

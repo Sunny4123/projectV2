@@ -23,7 +23,7 @@
             <a href="homepage_1.php">หน้าแรก</a>
             <a href="myshop.php">ร้านค้าของฉัน</a>
             <a href="market.php" class="active">ตลาด</a>
-            <a href="My_order.php" class="active"><i class="fa-solid fa-truck-fast"></i></a>
+            <a href="newmyorder.php" class="active"><i class="fa-solid fa-truck-fast"></i></a>
             <a href="homepage_1.php?id=1">ออกจากระบบ</a>
         </nav>
     </header>
