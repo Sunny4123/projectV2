@@ -4,4 +4,6 @@
     $sql = "DELETE FROM myorder WHERE id = '$id'";
     $result = mysqli_query($connect,$sql);
     header('location: newmyorder.php');
+    session_start();
+    $_SESSION['stc'] = "true";
 ?>

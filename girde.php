@@ -19,6 +19,10 @@
                     header('location: farmerregis.php');
                 }
             }
+            $rowcount=mysqli_num_rows($result);
+            if($rowcount == 0){
+                header('location: farmerregis.php');
+            }
         }
     }
 ?>

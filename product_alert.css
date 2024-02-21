@@ -24,7 +24,9 @@ body {
     align-items: center;
     z-index: 100;
     transition: .3s;
+    margin-top: -200px;
 }
+    
 .logo img {
     width: 100px;
     height: 70px;
@@ -42,17 +44,9 @@ body {
     color: rgb(0, 255, 110);
 }
 .main-alert {
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    background: rgb(217, 213, 150);
-    background-size: cover;
-    min-height: 937px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
+    padding-bottom: 750px;
 }
+    
 .head-show {
     display: flex;
     background: rgba(19, 227, 127, 0.919);
@@ -80,7 +74,7 @@ body {
     font-size:35px;
 }
 .alert-show {
-    margin: 0 30px 100px 13rem;
+    margin: 0 0 0 0;
     width: 450px;
     height: 230px;
     background: rgba(219, 210, 210, 0.733);
@@ -133,6 +127,12 @@ footer {
 footer p {
     padding-top: 9px;
 }
-.item{
-    margin-top: 15%;
+.item {
+    margin-left: 7%;
+    margin-bottom: 5%;
+}
+.main-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 200px;
 }

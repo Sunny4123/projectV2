@@ -117,3 +117,19 @@ button a{
         flex-wrap: wrap;
     }
 }
+.button-con a button {
+    border: 1px solid black;
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    background-color: rgba(42, 218, 116, 0.837);
+}
+.button-con a button:hover {
+    background-color: rgba(35, 142, 81, 0.837);
+}

@@ -42,9 +42,13 @@
                     <label><?php echo $row['type']; ?></label>
                 </div>
             </div>
-            <button>ยืนยัน</button>
+            <button>ย้อนกลับ</button>
         </form>
-        <a href="update_order_type.php?typeorder=con&id=<?php echo $id; ?>"><button>ส่งของแล้ว</button></a>
+        <div class="button-con">
+            <a href="update_order_type.php?typeorder=con&id=<?php echo $id; ?>"><button>ส่งของแล้ว</button></a>
+        </div>
+        
+        
 </body>
 
 </html>

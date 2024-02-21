@@ -2,6 +2,7 @@
     include_once "sever.php";
     session_start();
     $name = "";
+    $stc = "";
     if(isset($_SESSION['name'])){
         $name = $_SESSION['name'];
     }
@@ -21,7 +22,7 @@
     }
     $sql = "SELECT * FROM myorder WHERE username = '$name'";
     $result = mysqli_query($connect,$sql);
-    $rownum = mysqli_num_rows($result);
+    $rownum = mysqli_num_rows($result);   
     
 ?>
 <!DOCTYPE html>
@@ -33,9 +34,30 @@
     <link rel="stylesheet" href="newmyorder.css">   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/2ec2ff8d8c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <?php
+    if(isset($_SESSION['stc'])){
+    ?>
+    <html>
+        <body>
+            <script>
+                Swal.fire({
+                icon: 'success',
+                title: 'success',
+                showConfirmButton: false,
+                timer: 1500
+        });
+            </script> 
+        </body>
+    </html>
+        
+    <?php
+        unset($_SESSION['stc']);
+    }
+    ?>
     <header class="header">
         <a href="homepage.html" class="logo"><img src="logo AC.png"></a>
         <nav class="navbar">
