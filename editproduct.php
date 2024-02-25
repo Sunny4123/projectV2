@@ -24,20 +24,22 @@ if(!empty($_FILES["file"]["name"])){
             $result = mysqli_query($connect,$sql);
             if($result){
                 header("location: myshop.php");
+                $_SESSION['s_edit'] = "true";
             }else{
-                echo "error";
+                echo "error upload";
             }
         }else{
-            echo "error type";
+            echo "error move";
         }
     }else{
-        echo "error file"; 
+        echo "error file type"; 
     }
 }else{
     $sql = "UPDATE myshop2 SET productname = '$name',price = '$price',num = '$number' WHERE id = '$id'";
     $result = mysqli_query($connect,$sql);
     if($result){
         header("location: myshop.php");
+        $_SESSION['s_edit'] = "true";
     }else{
         echo "error";
     }

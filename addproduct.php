@@ -23,6 +23,7 @@ if(!empty($_FILES["file"]["name"])){
             $result = mysqli_query($connect,$sql);
             if($result){
                 header("location: myshop.php");
+                $_SESSION['s_edit'] = "true";
             }else{
                 echo "error";
             }

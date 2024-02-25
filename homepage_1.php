@@ -59,7 +59,7 @@
         <a href="#about">เกี่ยวกับเรา</a>
         <a href="#services">บริการอื่นๆ</a>
         <a href="#contact">ติดต่อเรา</a>
-        <a href="homepage_1.php?id=1">ออกจากระบบ</a>
+        <a href="homepage_1.php?id=1"><i class='bx bx-log-out'></i></a>
     </nav> 
 </header>
 <body>   

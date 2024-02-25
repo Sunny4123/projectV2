@@ -27,11 +27,12 @@
     <link rel="stylesheet" href="myshop11.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/2ec2ff8d8c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
    
 <body>
     <header class="header">
-        <a href="homepage.html" class="logo">loo</a>
+        <a href="homepage.html" class="logo"><img src="logo AC.png" alt="logo" width="100px" style="padding-top: 5px;"></a>
         <nav class="navbar">
             <a href="homepage_1.php">หน้าแรก</a>
             <a href="myshop.php" class="active">ร้านค้าของฉัน</a>
@@ -50,7 +51,27 @@
                     <h1>ร้านค้าของคุณยังไม่มีสินค้า</h1>
                     </div>';
             }
+          
         ?>
+        <?php
+            if(isset($_SESSION['s_edit'])){
+        ?>
+        <html>
+            <body>
+                <script>
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'SUCCESS',
+                    showConfirmButton: false,
+                    timer: 1500
+            });
+                </script> 
+            </body>
+        </html>
+    <?php
+        unset($_SESSION['s_edit']);
+    }
+    ?>
             <body>
                 <div class="add-box1">
                 <a href="addproduct.html">เพิ่มสินค้าของคุณ+</a>

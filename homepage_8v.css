@@ -506,3 +506,6 @@ span {
     background-position: center;
     height: 100vh;
 }
+.navbar i {
+    font-size: 25px;
+}

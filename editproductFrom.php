@@ -35,7 +35,12 @@
                 <label>ราคาสินค้า/บาท</label>
                 <input type="text" value = "<?php echo $row['price']; ?>" name="price" placeholder="0/บาท"required />
             </div>
-                <button>เพิ่มสินค้า</button>
+                <button>ยืนยัน</button>
+               
         </form>
+        <div class="button-con">
+            <a href="delProduct.php?id=<?php echo $id; ?>"><button>ลบ</button></a>
+        </div>
+        
 </body>
 </html>

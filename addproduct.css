@@ -104,3 +104,20 @@ button {
         flex-wrap: wrap;
     }
 }
+.button-con a button {
+    border: rgba(255, 0, 0, 0.837) solid 1px;
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    background-color: rgba(255, 0, 0, 0.837);
+}
+.button-con a button:hover {
+    background-color: rgba(142, 35, 35, 0.837);
+    border: rgba(142, 35, 35, 0.837) solid 1px;
+}
