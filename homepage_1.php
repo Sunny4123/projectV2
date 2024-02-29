@@ -111,8 +111,8 @@
         </div>        
         <span class="home-imgHover"></span>
         <?php
+        echo '<script src="script2.js"></script>';
          if(isset($_SESSION['checkv1'])){
-            echo '<script src="script2.js"></script>';
             unset($_SESSION['checkv1']);
          }
         ?>
