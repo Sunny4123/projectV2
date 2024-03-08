@@ -1,26 +1,38 @@
 <?php
     session_start();
     include_once ("sever.php");
-    $_SESSION['seedmail']="no";
-    $email = $_POST['forget'];
-    $emailseed = $_POST['forget'];
-    $_SESSION['seedemail']= $email;
     $type = $_GET['type'];
     if($type == "farmer"){
-        $sql2 = "SELECT * FROM user WHERE email = '$email'";
-        $result2 = mysqli_query($connect,$sql2);
-        $f2 = mysqli_fetch_assoc($result2);
-        if(empty($f2['email'])){
-            $_SESSION['noemail'] = "ไม่พบที่อยู่อีเมล";
-            header('location: forgetpassword.php?type=farmer');
+        if(!isset($_SESSION['warningpass'])){
+            $_SESSION['seedmail']="no";
+            $email = $_POST['forget'];
+            $emailseed = $_POST['forget'];
+            $_SESSION['seedemail']= $email;
+            $type = $_GET['type'];
+            $sql2 = "SELECT * FROM user WHERE email = '$email'";
+            $result2 = mysqli_query($connect,$sql2);
+            $f2 = mysqli_fetch_assoc($result2);
+            if(empty($f2['email'])){
+                $_SESSION['noemail'] = "ไม่พบที่อยู่อีเมล";
+                header('location: forgetpassword.php?type=farmer');
+            }
+            unset($_SESSION['warningpass']);
         }
     }else{
-        $sql = "SELECT * FROM usercumtomers WHERE email = '$email'";
-        $result = mysqli_query($connect,$sql);
-        $f = mysqli_fetch_assoc($result);
-        if(empty($f['email'])){
-            $_SESSION['noemail'] = "ไม่พบที่อยู่อีเมล";
-            header('location: forgetpassword.php?type=customer');
+        if(!isset($_SESSION['warningpass'])){
+            $_SESSION['seedmail']="no";
+            $email = $_POST['forget'];
+            $emailseed = $_POST['forget'];
+            $_SESSION['seedemail']= $email;
+            $type = $_GET['type'];
+            $sql = "SELECT * FROM usercumtomers WHERE email = '$email'";
+            $result = mysqli_query($connect,$sql);
+            $f = mysqli_fetch_assoc($result);
+            if(empty($f['email'])){
+                $_SESSION['noemail'] = "ไม่พบที่อยู่อีเมล";
+                header('location: forgetpassword.php?type=customer');
+            }
+            unset($_SESSION['warningpass']);    
         }
     }
 ?>
@@ -38,13 +50,18 @@
             <h2>เปลี่ยนรหัสผ่าน</h2>
         </header>
         <form action="forgetadd.php?type=<?php echo $type ?>" class="reset-main" method="post">
+            <?php if(isset($_SESSION['warningpass'])){
+                echo "<p align='center'><font color='FF0000'><B>".$_SESSION['warningpass']."</B></font></p>";
+                unset($_SESSION['warningpass']);
+            }
+            ?>
             <div class="input-box">
                 <label>ป้อนรหัสผ่านใหม่</label>
                 <input type="text" name="password" placeholder="รหัสผ่านใหม่"required/>
             </div>
             <div class="input-box">
                 <label>ยืนยันรหัสผ่าน</label>
-                <input type="text" placeholder="ยืนยันรหัสผ่าน"required/>
+                <input type="text" name="password2" placeholder="ยืนยันรหัสผ่าน"required/>
             </div>
             <button type="submit" class="btn" value="farmer" name="check">เปลี่ยนรหัสผ่าน</button>
         </form>

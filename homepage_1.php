@@ -64,7 +64,6 @@
 </header>
 <body>   
 </body>
-    <script src = "sc.js"></script>
     <section class="home" id="home">
         <div class="rain">
             <span style="--i:10"></span>
@@ -111,8 +110,8 @@
         </div>        
         <span class="home-imgHover"></span>
         <?php
-        echo '<script src="script2.js"></script>';
          if(isset($_SESSION['checkv1'])){
+            echo '<script src="script2.js"></script>';
             unset($_SESSION['checkv1']);
          }
         ?>

@@ -77,7 +77,7 @@
                 <a href="addproduct.html">เพิ่มสินค้าของคุณ+</a>
                 </div>
                 <div class="add-box2">
-                    <a href="product_alert.php">สินค้าที่ต้องจัดเตรียม</a>
+                    <a href="product_alert.php"><i class='bx bxs-bell-ring' ></i></a>
                 </div>
                 
                 <div class="flexbox">
